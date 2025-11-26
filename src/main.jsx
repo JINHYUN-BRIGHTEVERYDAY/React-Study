@@ -23,7 +23,9 @@ const root = document.getElementById('root');
 createRoot(root).render(appObj[currentApp]);
 
 function BoxComponent() {
-    return <div><TitleComponent /></div>
+    // return <div>{<TitleComponent()}</div>
+    // return <div><TitleComponent title="타이틀" title2="타이틀2"/></div>
+    return <div><TitleComponent title= "타이틀" title2="타이틀2"/></div>
 }
 
 // function BoxComponent() {
@@ -32,6 +34,8 @@ function BoxComponent() {
 // 
 // 
 
-function TitleComponent() {
-    return <h1>타이틀</h1>
+function TitleComponent({title, title2}) {
+    console.log(title);
+    console.log(title2);
+    return <h1>{title2}</h1>
 }
