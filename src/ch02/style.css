@@ -1,0 +1,53 @@
+.main-box {
+    margin: 50px auto;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    width: 500px;
+    height: 500px;
+}
+
+.title-box {
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    width: 400px;
+    text-align: center;
+}
+
+
+.input-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    width: 400px; 
+}
+
+
+.button-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    width: 400px; 
+}
+
+
+.display-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin: 10px auto;
+    box-sizing: border-box;
+    border: 1px solid #dbdbdb;
+    padding: 10px;
+    width: 400px; 
+}
