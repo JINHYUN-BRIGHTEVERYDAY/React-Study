@@ -28,6 +28,7 @@ function App02() {
         
     }
 
+    
     const handleAgeInputOnChange = (event) => {
         console.log(event.target.value);
         setAge(event.target.value);
@@ -47,6 +48,8 @@ function App02() {
         setAge("");
     }
 
+
+    // 리셋 버튼을 눌렀을 때 모두 초기화되어 값을 다 비워버리도록
     const handleResetOnClick = () => {
         setName2("");
         setAge2("");
@@ -56,12 +59,6 @@ function App02() {
         // 리셋되면 값을 전부 다 비워버리기
     }
 
-
-
-    // 리셋 버튼을 눌렀을 때 다시 원래대로 돌아가도록
-    const ResetNameChange = () => {
-        originalName(changeName);
-    }
 
 
 
@@ -79,11 +76,15 @@ function App02() {
             </div>
 
             <div className="input-box">
-                <input type="text" value={name} onChange={handleNameInputOnChange}/>
+                {/* 이름 값 변경하기 */}
+                <input type="text" value={name} onChange={handleNameInputOnChange}/> 
+                {/* 나이 값 변경하기 */}
                 <input type="text" value={age} onChange={handleAgeInputOnChange}/>
             </div>
             <div className = "button-box">
+                {/* 확인 버튼 클릭 */}
                 <button onClick={handleOkOnClick}>확인</button>
+                {/* 초기화 버튼 클릭 */}
                 <button onClick={handleResetOnClick}>초기화</button>
             </div>
 
