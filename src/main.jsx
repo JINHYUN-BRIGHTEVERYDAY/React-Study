@@ -2,18 +2,20 @@ import { createRoot } from 'react-dom/client'
 import App01 from './ch01/App01';
 import App02 from './ch02/App02';
 import App02_2 from './ch02/App02_2';
+import App02_3 from './ch02/App02_3';
 import Counter from './ch02/Counter';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "ch02_2";
+const currentApp = "ch02_3";
 
 const appObj = {
     ch01 : <App01 />,
     ch02 : <App02 />,
     ch02_2 : <App02_2/>,
+    ch02_3 : <App02_3/>,
     counter: <Counter />,
 
     // "ch02" : <App02 />,
@@ -44,7 +46,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.ch02_2);
+createRoot(document.getElementById('root')).render(appObj.ch02_3);
 
 
 
