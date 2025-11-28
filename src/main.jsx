@@ -3,20 +3,30 @@ import App01 from './ch01/App01';
 import App02 from './ch02/App02';
 import App02_2 from './ch02/App02_2';
 import App02_3 from './ch02/App02_3';
+import App02_4 from './ch02/App02_4';
 import Counter from './ch02/Counter';
+import Inputs from './ch02/inputs';
+import SearchName from './ch02/SearchName';
+import UseEffect01 from './ch03/UseEffect01';
+import UseEffect03 from './ch03/UseEffect03';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "ch02_3";
+const currentApp = "searchName";
 
 const appObj = {
     ch01 : <App01 />,
     ch02 : <App02 />,
     ch02_2 : <App02_2/>,
     ch02_3 : <App02_3/>,
+    ch02_4 : <App02_4 />,
+    inputs : <Inputs />,
     counter: <Counter />,
+    searchName: <SearchName />,
+    useEffect01: <UseEffect01 />,
+    useEffect03: <UseEffect03 />,
 
     // "ch02" : <App02 />,
     // ch01_1: <h1>ch01_1 렌더링</h1>,
@@ -46,7 +56,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.ch02_3);
+createRoot(document.getElementById('root')).render(appObj.useEffect03);
 
 
 
