@@ -4,7 +4,7 @@ import { use, useState } from "react";
 // App02_2 컴포넌트 (부모 컴포넌트)
 /*
 전체 어플리케이션의 컨테이너 역할
- */
+*/
 
 function App02_2() {
     // 현재 이름 값과 업데이트 함수
