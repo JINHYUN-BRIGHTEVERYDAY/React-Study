@@ -9,12 +9,16 @@ import Inputs from './ch02/inputs';
 import SearchName from './ch02/SearchName';
 import UseEffect01 from './ch03/UseEffect01';
 import UseEffect03 from './ch03/UseEffect03';
+import UseEffect04 from './ch03/UseEffect04';
+import Axios01 from './ch04/Axios01';
+import Promise01 from './ch04/Promise01';
+import Axios02 from './ch04/Axios02';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "searchName";
+const currentApp = "axios02";
 
 const appObj = {
     ch01 : <App01 />,
@@ -27,6 +31,10 @@ const appObj = {
     searchName: <SearchName />,
     useEffect01: <UseEffect01 />,
     useEffect03: <UseEffect03 />,
+    useEffect04: <UseEffect04 />,
+    axios01: <Axios01 />,
+    axios02: <Axios02 />,
+    promise01: <Promise01 />,
 
     // "ch02" : <App02 />,
     // ch01_1: <h1>ch01_1 렌더링</h1>,
@@ -56,7 +64,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.useEffect03);
+createRoot(document.getElementById('root')).render(appObj.axios02);
 
 
 
