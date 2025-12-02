@@ -5,14 +5,15 @@ function Axios02() {
     const [ inputValue, setInputValue] = useState({
         username:  "",     
     });
-
     const [users, setUsers] = useState([]);
+
 
     const getUsersApi = async () => {
         // inputValue.username의 값이 서버로 params에 담겨 전달됩니다.
         const response = await axios.get("http://192.168.2.101:8080/users", {params: {username: inputValue.username}});
         setUsers(response.data);
     }
+
 
     const handleInputOnChange = (e) => {
         const { name, value } = e.target; 
@@ -22,12 +23,14 @@ function Axios02() {
         });
     }
 
+
     const handleInputOnKeyDown = (e) => {
         console.log(e);
         if (e.keyCode === 13) {
             getUsersApi();
         }
     }
+
 
     const handleSearchOnClick = () => {
         getUsersApi();
@@ -68,6 +71,7 @@ function Axios02() {
 
     </>
 }
+
 
 export default Axios02;
 

@@ -13,6 +13,7 @@ import UseEffect04 from './ch03/UseEffect04';
 import Axios01 from './ch04/Axios01';
 import Promise01 from './ch04/Promise01';
 import Axios02 from './ch04/Axios02';
+import Axios03 from './ch04/Axios03';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
@@ -34,6 +35,7 @@ const appObj = {
     useEffect04: <UseEffect04 />,
     axios01: <Axios01 />,
     axios02: <Axios02 />,
+    axios03: <Axios03 />,
     promise01: <Promise01 />,
 
     // "ch02" : <App02 />,
@@ -64,7 +66,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.axios02);
+createRoot(document.getElementById('root')).render(appObj.axios03);
 
 
 
