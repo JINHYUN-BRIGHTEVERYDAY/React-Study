@@ -15,12 +15,13 @@ import Promise01 from './ch04/Promise01';
 import Axios02 from './ch04/Axios02';
 import Axios03 from './ch04/Axios03';
 import Axios04 from './ch04/Axios04';
+import Axios05 from './ch04/Axios05';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "axios04";
+const currentApp = "axios05";
 
 const appObj = {
     ch01 : <App01 />,
@@ -38,6 +39,7 @@ const appObj = {
     axios02: <Axios02 />,
     axios03: <Axios03 />,
     axios04: <Axios04 />,
+    axios05: <Axios05 />,
     promise01: <Promise01 />,
 
     // "ch02" : <App02 />,
@@ -68,7 +70,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.axios04);
+createRoot(document.getElementById('root')).render(appObj.axios05);
 
 
 
