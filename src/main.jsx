@@ -16,12 +16,20 @@ import Axios02 from './ch04/Axios02';
 import Axios03 from './ch04/Axios03';
 import Axios04 from './ch04/Axios04';
 import Axios05 from './ch04/Axios05';
+import Auth01 from './ch05/Auth01';
+import Auth02 from './ch05/Auth02';
+import Router01 from './ch06/Router01';
+import Router02 from './ch06/Router02';
+import Router03 from './ch06/Router03';
+import Router04 from './ch06/Router04';
+import Router05 from './ch06/Router05';
+import Css from './ch07/Css';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "axios05";
+const currentApp = "css";
 
 const appObj = {
     ch01 : <App01 />,
@@ -41,6 +49,15 @@ const appObj = {
     axios04: <Axios04 />,
     axios05: <Axios05 />,
     promise01: <Promise01 />,
+    auth01: <Auth01 />,
+    auth02: <Auth02 />,
+    router01: <Router01 />,
+    router02: <Router02 />,
+    router03: <Router03 />,
+    router04: <Router04 />,
+    router05: <Router05 />,
+    css: <Css />,
+    
 
     // "ch02" : <App02 />,
     // ch01_1: <h1>ch01_1 렌더링</h1>,
@@ -70,7 +87,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.axios05);
+createRoot(document.getElementById('root')).render(appObj.css);
 
 
 
