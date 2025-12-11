@@ -24,12 +24,16 @@ import Router03 from './ch06/Router03';
 import Router04 from './ch06/Router04';
 import Router05 from './ch06/Router05';
 import Css from './ch07/Css';
+import Zustand01 from './ch08/Zustand01';
+import UserInfoBox from './ch08/UserInfoBox';
+import Zustand02 from './ch08/Zustand02';
+import Zustand03 from './ch08/Zustand03';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "css";
+const currentApp = "userInfoBox";
 
 const appObj = {
     ch01 : <App01 />,
@@ -57,6 +61,10 @@ const appObj = {
     router04: <Router04 />,
     router05: <Router05 />,
     css: <Css />,
+    zustand01: <Zustand01 />,
+    zustand02: <Zustand02 />,
+    userInfoBox: <UserInfoBox />,
+    zustand03: <Zustand03 />,
     
 
     // "ch02" : <App02 />,
@@ -87,7 +95,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.css);
+createRoot(document.getElementById('root')).render(appObj.zustand03);
 
 
 
