@@ -28,12 +28,14 @@ import Zustand01 from './ch08/Zustand01';
 import UserInfoBox from './ch08/UserInfoBox';
 import Zustand02 from './ch08/Zustand02';
 import Zustand03 from './ch08/Zustand03';
+import ReactQuery01 from './ch09/ReactQuery01';
+import ReactQuery02 from './ch09/ReactQuery02';
 
 // 컴포넌트
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "userInfoBox";
+const currentApp = "reactQuery02";
 
 const appObj = {
     ch01 : <App01 />,
@@ -65,7 +67,8 @@ const appObj = {
     zustand02: <Zustand02 />,
     userInfoBox: <UserInfoBox />,
     zustand03: <Zustand03 />,
-    
+    reactQuery01: <ReactQuery01/>,
+    reactQuery02: <ReactQuery02/>,
 
     // "ch02" : <App02 />,
     // ch01_1: <h1>ch01_1 렌더링</h1>,
@@ -95,7 +98,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.zustand03);
+createRoot(document.getElementById('root')).render(appObj.reactQuery02);
 
 
 

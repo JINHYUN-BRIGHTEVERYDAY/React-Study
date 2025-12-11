@@ -1,0 +1,70 @@
+안녕하세요, **진현님**. ReactQuery는 React 애플리케이션에서 **서버 상태 관리**를 매우 효율적으로 처리하기 위해 사용하는 라이브러리입니다.
+
+ReactQuery가 등장하기 전에는 서버에서 가져온 데이터를 Redux나 Context API 같은 **클라이언트 상태 관리 도구**로 관리했습니다. 하지만 ReactQuery는 서버 상태 관리를 위한 복잡한 문제를 전담하여 해결해 줍니다.
+
+-----
+
+## 💡 ReactQuery는 무엇이고, 언제 사용해야 하나요?
+
+ReactQuery의 정식 명칭은 **TanStack Query**입니다. ReactQuery는 특히 \*\*비동기 데이터(서버 데이터, Fetch)\*\*를 다룰 때 발생하는 복잡하고 반복적인 문제를 해결하기 위해 탄생했습니다.
+
+### 1\. ReactQuery를 써야 하는 이유 (Why?)
+
+ReactQuery는 서버 데이터를 다룰 때 생기는 4가지 주요 골칫거리를 자동으로 처리해 줍니다.
+
+| 문제점 (기존 방식) | ReactQuery의 해결책 |
+| :--- | :--- |
+| **복잡한 로딩 상태** | `isLoading`, `isError`, `isSuccess` 등의 상태를 자동으로 관리하며, 컴포넌트에서 쉽게 가져다 쓸 수 있습니다. |
+| **데이터 동기화/갱신** | 백그라운드에서 자동으로 최신 데이터를 가져오거나(refetching), 일정 시간 간격으로 데이터를 업데이트(polling)하여 클라이언트 상태를 서버와 항상 동기화합니다. |
+| **캐싱(Caching)** | 이미 가져온 데이터를 메모리에 저장하여, 동일한 데이터를 다시 요청할 때 **즉시 이전 데이터를 보여준 후** 백그라운드에서 새로운 데이터를 가져옵니다. 불필요한 네트워크 요청을 줄여줍니다. |
+| **최적화 (Optimistic Update)** | 사용자의 액션(예: 좋아요 누르기)에 대해 서버 응답을 기다리지 않고 UI를 먼저 업데이트한 후, 서버 통신에 실패하면 롤백합니다. 사용자 경험을 극대화합니다. |
+
+### 2\. ReactQuery를 사용하는 시점 (When?)
+
+애플리케이션에 **비동기 데이터**의 비중이 높거나 다음 상황 중 하나 이상에 해당할 때 ReactQuery는 필수적입니다.
+
+  * **API 호출이 많은 경우:** 게시물 목록, 사용자 프로필, 대시보드 데이터 등 Fetch/Axios를 통해 외부 데이터를 자주 가져와야 할 때.
+  * **복잡한 캐싱 전략이 필요할 때:** 데이터를 한 번 가져온 후, 특정 시간 동안 재사용하고 싶을 때. (예: 5분 동안은 API 재호출 방지)
+  * **화면 포커스 시 데이터 갱신이 필요할 때:** 사용자가 브라우저 탭을 전환했다가 돌아왔을 때, 자동으로 데이터를 최신 상태로 업데이트하고 싶을 때.
+  * **전역 상태 관리 툴(Redux, Zustand)과 분리하고 싶을 때:** 비동기 서버 데이터는 ReactQuery에게 맡기고, UI 테마나 모달 상태 같은 단순한 클라이언트 상태만 Redux/Zustand로 관리하여 역할을 명확히 나눌 때.
+
+-----
+
+## 🧑‍💻 ReactQuery의 기본 사용 예시
+
+데이터를 가져오는 코드가 얼마나 단순해지는지 확인하실 수 있습니다.
+
+```javascript
+// 기존 방식 (useState, useEffect 사용): 복잡하고 에러 핸들링 필요
+/*
+function PostList() {
+    const [posts, setPosts] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
+    // ... useEffect 내부에서 비동기 호출 및 상태 분기 처리 ...
+}
+*/
+
+// ReactQuery 사용 방식: 단순하고 자동 캐싱/갱신 지원
+import { useQuery } from 'react-query';
+
+function PostList() {
+    // 1. 쿼리 키: 데이터의 고유 키 (캐싱 및 갱신에 사용)
+    // 2. 쿼리 함수: API를 호출하는 비동기 함수
+    const { data: posts, isLoading, isError, error } = useQuery('postsData', fetchPosts);
+
+    if (isLoading) 
+        return <div>로딩 중...</div>;
+    if (isError) 
+        return <div>에러 발생: {error.message}</div>;
+
+    return (
+        <ul>
+            {posts.map(post => <li key={post.id}>{post.title}</li>)}
+        </ul>
+    );
+}
+```
+
+ReactQuery는 서버 데이터 관리를 표준화하여 개발자가 비즈니스 로직에 더 집중할 수 있도록 도와주는 강력한 도구입니다.
+
+ReactQuery를 사용해 API 데이터를 관리하는 예시 코드를 작성해 드릴까요?
