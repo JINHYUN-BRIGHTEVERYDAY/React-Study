@@ -5,6 +5,11 @@ import { useUserInfo } from "./store/zustandStore";
 
 // 컴포넌트 이름은 React 컨벤션에 따라 대문자로 시작하는 것이 좋습니다.
 function Zustand02() { 
+
+    /**
+     * 로컬 상태의 역할과 전역 상태의 역할
+     * 연동까지
+     */
     
     // 1. 로컬 상태 (입력 필드의 실시간 값)
     const [ user, setUser] = useState({
