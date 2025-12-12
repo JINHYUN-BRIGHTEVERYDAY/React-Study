@@ -35,7 +35,7 @@ import ReactQuery02 from './ch09/ReactQuery02';
 // const name = "김준일" "김준이";
 
 // const currentApp = "ch01_1";
-const currentApp = "reactQuery02";
+const currentApp = "router01";
 
 const appObj = {
     ch01 : <App01 />,
@@ -98,7 +98,7 @@ const appObj = {
 
 
 // 렌더링을 어떤 거 해야 할지
-createRoot(document.getElementById('root')).render(appObj.reactQuery02);
+createRoot(document.getElementById('root')).render(appObj.router01);
 
 
 

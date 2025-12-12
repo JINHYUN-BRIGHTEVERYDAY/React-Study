@@ -21,6 +21,7 @@ function Router02() {
     </BrowserRouter>
 }
 
+
 function Phone() {
     return <div>
         <h1>연락처</h1>
@@ -37,11 +38,37 @@ function Phone() {
 }
 
 
+/**
+ * 중첩 라우팅:
+ * 중첩 라우팅은 부모 컴포넌트의 URL 경로를 공유하면서, 
+ * 부모 컴포넌트 내부에 자식 컴포넌트 동적으로 렌더링
+ * 
+ * 핵심 개념: 상대 경로 (Relative Path)
+    v6의 특징: <Route path="/p1">처럼 자식 라우트의 경로는 
+    부모 라우트의 경로 (/sub2)를 기준으로 해석됩니다. 
+    즉, /sub2와 /p1이 합쳐져 최종 URL은 /sub2/p1이 됩니다. 
+    (이전 버전과 달리 앞에 부모 경로를 반복하지 않아도 됩니다.)
+
+    B. 와일드카드 (*)의 역할
+    진현님의 코드에서 path="/sub/*" 와 path="/sub2/*"처럼 
+    부모 <Route>에 와일드카드를 사용한 것은 해당 경로 
+    아래의 모든 경로를 처리하겠다는 의미입니다.
+
+    <Route path="/sub2/*" element={<Phone />} />
+
+    이 라우트는 /sub2로 시작하는 모든 URL (/sub2/p1, /sub2/p2, /sub2/any-thing)에 대해 
+    <Phone /> 컴포넌트를 렌더링합니다.
+*/
+
+
+
+// 함수 호출
 function Home() {
     return <div>
         <h1>홈</h1>
         <Link to={"/name"}>이름 페이지</Link>
         <Link to={"/age"}>나이 페이지</Link>
+        {/* Link 에 to 연결 -> 이쪽으로 이동하라 */}
     </div>
 }
 
